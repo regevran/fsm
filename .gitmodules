@@ -1,0 +1,9 @@
+[submodule "graph"]
+	path = graph
+	url = https://github.com/pratzl/graph
+	ignore = dirty	
+
+[submodule "Papers"]
+	path = Papers
+	url = git@github.com:wg21il/Papers.git
+	ignore = dirty	
