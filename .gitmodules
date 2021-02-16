@@ -6,5 +6,5 @@
 [submodule "Papers"]
 	path = Papers
 	url = git@github.com:wg21il/Papers.git
-	branch = updated-pdf-generator
+	branch = P2284/master
 	ignore = dirty	
