@@ -16,7 +16,7 @@ exit
 }
 
 destdir=stdfsm
-image_name=fsm
+image_name=fsm:latest
 container_name=fsm-container
 
 submodule=false
@@ -72,13 +72,13 @@ fi
 if $image
 then
     echo "docker image build -t ${image_name}"
-    docker image build -t ${image_name}
+    docker image build --tag ${image_name} .
 fi
 
 # start the fsm container
 if $run 
 then
-    echo "docker container run -it -v ${PWD}:/home/fsm/ --name ${container_name}"
-    docker container run -it -v ${PWD}:/home/fsm/ --name ${container_name}
+    echo "docker container run -it -v ${PWD}:/home/fsm/ --name ${container_name} $image_name"
+    docker container run -it -v ${PWD}:/home/fsm/ --name ${container_name} $image_name
 fi
 
