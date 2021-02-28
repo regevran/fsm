@@ -1,15 +1,13 @@
 # fsm
 std::fsm sandbox - for library development and tests
 
-## establish environment
-* clone, with submodules:
+## Environment
+* Clone with submodules:
   `git clone --recurse-submodules git@github.com:regevran/fsm.git stdfsm`
 
-* run ./install.sh
-** init submodules
-** build docker
-** run docker
-use ./install.sh --help for details
+Run ./install.sh that will:
+* init submodules
+* build docker image
+* run docker container
 
-
-
+use `./install.sh --help` for details
