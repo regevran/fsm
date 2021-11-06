@@ -5,6 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y \
 	curl \
+	default-jre \
 	gcc \
 	git \
 	make \
@@ -17,10 +18,14 @@ RUN apt-get update && apt-get install -y \
 	texlive-xetex \
 	vim 
 
+# pandoc
 ENV PANDOC_VERSION=2.15
 ENV PANDOC_PATH=/pandoc_latest
 ENV PANDOC_FILE=pandoc-${PANDOC_VERSION}-1-amd64.deb 
 ADD https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/${PANDOC_FILE} /${PANDOC_PATH}/
 RUN apt-get install -y ${PANDOC_PATH}/${PANDOC_FILE}
-
 RUN pip install panflute
+
+# plant uml
+RUN curl -L http://sourceforge.net/projects/plantuml/files/plantuml.jar/download --output /plantuml.jar
+RUN pip install pandoc-plantuml-filter
