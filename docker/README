@@ -1,0 +1,9 @@
+after ./run, inside the docker, make sure
+that you have a symbolic link to paper/P2284.md
+with the name P2284.md (i.e P2284.md -> paper/P2284.md)
+and then run:
+# make P2284.pdf
+
+without this make will fail.
+From some reason git refuses to store this symbolic link in its repository.
+No time to investigate the reason at the moment.
